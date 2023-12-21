@@ -1,2 +1,11 @@
 # Use the httpd-parent image as base
 FROM quay.io/redhattraining/httpd-parent
+RUN mkdir -p /var/www/html
+RUN echo "Gello conatoinaer" > /var/www/html/index.html
+RUN rm -rf /run/httpd
+RUN mkdir /run/httpd
+LABEL version="1.0"
+LABEL description="this is containerfile"
+MAINTAINER redhat traiing
+USER root
+
